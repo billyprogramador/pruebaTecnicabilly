@@ -23,11 +23,13 @@ function cargar_tabla(){
       data: {id:0},
       success: function(datos){
         $("#contenido").html(datos);
+        $("#encabezado").removeClass("d-none");
       }
   });
 }
 
 function crea_empleado(){
+  $("#encabezado").addClass("d-none");
   $.ajax({
       url: "php/formulario.php",
       type: "POST",
@@ -39,6 +41,7 @@ function crea_empleado(){
 }
 
 function modificar_empleado(id){
+  $("#encabezado").addClass("d-none");
   $.ajax({
       url: "php/formulario.php",
       type: "POST",
